@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class InventarManazer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject InventarMenu;
+    private bool menuActivated;
+    public ItemSlot[] itemSlot;
 
-    // Update is called once per frame
+
+    void start()
+        {
+
+        }
+
     void Update()
-    {
-        
-    }
+        {
+            if (Input.GetButtonDown("Inventar") && menuActivated)
+            {
+                InventarMenu.SetActive(false);
+                menuActivated = false;
+        }
+
+            else if (Input.GetButtonDown("Inventar") && !menuActivated)
+            {
+                InventarMenu.SetActive(true);
+                menuActivated = true;
+            }
+        }
+
 }
