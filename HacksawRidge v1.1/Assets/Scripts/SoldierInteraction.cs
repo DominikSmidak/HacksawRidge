@@ -8,6 +8,7 @@ public class SoldierInteraction : MonoBehaviour
     public GameObject healing;
 
     public PlayerMovement playerMovement;
+    public SoldierArea soldierArea;
 
     private bool isPlayerInRange = false;
 
@@ -58,5 +59,7 @@ public class SoldierInteraction : MonoBehaviour
     {
         healing.SetActive(false);
         playerMovement.enabled = true;
+
+        soldierArea.CompleteHealing(); // not gonna be here later
     }
 }

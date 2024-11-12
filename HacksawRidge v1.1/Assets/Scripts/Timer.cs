@@ -44,4 +44,9 @@ public class Timer : MonoBehaviour
         isCountingDown = true;
         remainingTime = time;
     }
+
+    public bool IsTimerExpired()
+    {
+        return !isCountingDown && remainingTime <= 0;
+    }
 }
