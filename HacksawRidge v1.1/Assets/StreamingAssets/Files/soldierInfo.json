@@ -1,0 +1,36 @@
+{
+    "soldiers": [
+        {
+            "name": "Michael B. Dorton",
+            "woundType": "BrokenLeg",
+            "treatment": [ "Morphium", "Pills", "Bandage"],
+            "countOfSupplies": 3
+        },
+        {
+            "name": "Raymond A. Roby",
+            "woundType": "BrokenArm",
+            "treatment": [ "Morphium", "Pills", "Bandage"],
+            "countOfSupplies": 3
+        },
+        {
+            "name": "James V. Dees",
+            "woundType": "GunshotWound",
+            "treatment": [ "ToiletPaper", "Drugs"],
+            "countOfSupplies": 2
+        }
+    ],
+    "positions": [
+        {
+            "x": 10,
+            "y": 15
+        },
+        {
+            "x": -10,
+            "y": -10
+        },
+        {
+            "x": 5,
+            "y": -15
+        }
+    ]
+}

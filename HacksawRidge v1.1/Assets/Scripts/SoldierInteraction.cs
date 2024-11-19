@@ -7,13 +7,17 @@ public class SoldierInteraction : MonoBehaviour
     public GameObject pressE;
     public GameObject healing;
 
-    public PlayerMovement playerMovement;
+    private PlayerMovement playerMovement;
     public SoldierArea soldierArea;
 
     private bool isPlayerInRange = false;
 
     void Start()
     {
+        if (playerMovement == null)
+        {
+            playerMovement = FindObjectOfType<PlayerMovement>();
+        }
         pressE.SetActive(false);
         healing.SetActive(false);
     }
