@@ -7,6 +7,8 @@ public class SoldierData
     public string woundType;
     public string[] treatment;
     public int countOfSupplies;
+    public string spritePath;
+    public float time;
 }
 
 [System.Serializable]

@@ -3,20 +3,26 @@
         {
             "name": "Michael B. Dorton",
             "woundType": "BrokenLeg",
-            "treatment": [ "Morphium", "Pills", "Bandage"],
-            "countOfSupplies": 3
+            "treatment": [ "Morphium", "Pills", "Bandage" ],
+            "countOfSupplies": 3,
+            "spritePath": "Player/leziaci-1",
+            "time": 60.0
         },
         {
             "name": "Raymond A. Roby",
             "woundType": "BrokenArm",
-            "treatment": [ "Morphium", "Pills", "Bandage"],
-            "countOfSupplies": 3
+            "treatment": [ "Morphium", "Pills", "Bandage" ],
+            "countOfSupplies": 3,
+            "spritePath": "Player/leziaci-2",
+            "time": 60.0
         },
         {
             "name": "James V. Dees",
             "woundType": "GunshotWound",
-            "treatment": [ "ToiletPaper", "Drugs"],
-            "countOfSupplies": 2
+            "treatment": [ "ToiletPaper", "Drugs" ],
+            "countOfSupplies": 2,
+            "spritePath": "Player/leziaci-3",
+            "time": 90.0
         }
     ],
     "positions": [

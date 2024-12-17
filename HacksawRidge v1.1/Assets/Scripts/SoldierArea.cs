@@ -11,6 +11,8 @@ public class SoldierArea : MonoBehaviour
     public GameObject barrier;
     private bool isTaskCompleted = false;
 
+    private float customTime;
+
     private void Start()
     {
         timer.SetActive(false);
@@ -25,6 +27,11 @@ public class SoldierArea : MonoBehaviour
         }
     }
 
+    public void SetTimerDuration(float time)
+    {
+        customTime = time;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !hasTimerStarted && !isTaskCompleted)
@@ -32,7 +39,7 @@ public class SoldierArea : MonoBehaviour
             timer.SetActive(true);
             barrier.SetActive(true);
             Debug.Log("Barrier Activated");
-            timerScript.StartTimer();
+            timerScript.StartTimerWithTime(customTime);
             hasTimerStarted = true;
         }
 
@@ -49,5 +56,9 @@ public class SoldierArea : MonoBehaviour
         barrier.SetActive(false);
         timer.SetActive(false);
         hasTimerStarted = false;
+
+        //docasne riesienie, kym nebude hotovy system liecenia
+        Debug.Log("Soldier task ended. Destroying soldier.");
+        Destroy(transform.parent.gameObject);
     }
 }

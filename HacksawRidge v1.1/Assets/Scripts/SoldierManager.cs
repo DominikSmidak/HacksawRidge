@@ -35,14 +35,11 @@ public class SoldierManager : MonoBehaviour
         }
         else
         {
-            // For PC, Mac, Linux, iOS
             jsonData = File.ReadAllText(filePath);
         }
 
-        // Parse JSON
         SoldierDataList soldierDataList = JsonUtility.FromJson<SoldierDataList>(jsonData);
 
-        // Randomize soldiers and positions
         List<SoldierData> randomizedSoldiers = new List<SoldierData>(soldierDataList.soldiers);
         List<Position> randomizedPositions = new List<Position>(soldierDataList.positions);
 
@@ -50,7 +47,6 @@ public class SoldierManager : MonoBehaviour
         randomizedSoldiers.Sort((a, b) => rng.Next(-1, 2));
         randomizedPositions.Sort((a, b) => rng.Next(-1, 2));
 
-        // Ensure there is no mismatch between soldiers and positions
         int count = Mathf.Min(randomizedSoldiers.Count, randomizedPositions.Count);
 
         for (int i = 0; i < count; i++)
