@@ -5,20 +5,53 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
-    float speedX, speedY;
-    Rigidbody2D rb;
+    private float speedX, speedY;
+    private Rigidbody2D rb;
+    private Vector2 input;
+    public Animator anim;
+    private bool moving;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        speedX = Input.GetAxis("Horizontal") * speed;
-        speedY = Input.GetAxis("Vertical") * speed;
-        rb.velocity = new Vector2(speedX, speedY);
+        GetInput();
+        Animate();
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = input * speed;
+    }
+
+    private void GetInput()
+    {
+        speedX = Input.GetAxisRaw("Horizontal");
+        speedY = Input.GetAxisRaw("Vertical");
+
+        input = new Vector2(speedX, speedY);
+        input.Normalize();
+    }
+
+    private void Animate()
+    {
+        if(input.magnitude > 0.1f || input.magnitude < -0.1f)
+        {
+            moving = true;
+        } else
+        {
+            moving = false;
+        }
+
+        if (moving)
+        {
+            anim.SetFloat("X", speedX);
+            anim.SetFloat("Y", speedY);
+        }
+
+        anim.SetBool("Moving", moving);
     }
 }
