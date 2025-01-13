@@ -114,10 +114,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   woundText: {fileID: 5312334654426872542}
-  woundImage: {fileID: 0}
-  brokenLegSprite: {fileID: 0}
-  brokenArmSprite: {fileID: 0}
-  gunshotWoundSprite: {fileID: 0}
+  woundImage: {fileID: 2106277078198265176}
+  brokenLegSprite: {fileID: 21300000, guid: 596159a0b7d4149c492f90105e6e545e, type: 3}
+  brokenArmSprite: {fileID: 21300000, guid: 78b939535b023448ba6e9198767e5535, type: 3}
+  gunshotWoundSprite: {fileID: 21300000, guid: 6e005c6dbf52d4f7e947b87d25abe440, type: 3}
 --- !u!1 &840349886174170807
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +655,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9174342920998193372}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -794,7 +794,7 @@ RectTransform:
   - {fileID: 2584916024193469385}
   - {fileID: 6742581332749195132}
   m_Father: {fileID: 2458790957555217827}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1127,12 +1127,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2458790957555217827}
-  m_RootOrder: 3
+  m_Father: {fileID: 9174342920998193372}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 256, y: 142.95}
+  m_AnchoredPosition: {x: -0.00015258789, y: 142.95004}
   m_SizeDelta: {x: 411.47, y: 285.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7354576619411672652
@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4291719851801617474}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1448,6 +1448,7 @@ RectTransform:
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8655805885456438300}
   - {fileID: 3633448875030591135}
   m_Father: {fileID: 2458790957555217827}
   m_RootOrder: 2
@@ -1576,7 +1577,7 @@ MonoBehaviour:
   pressE: {fileID: 895646621023981202}
   healing: {fileID: 484307436296735285}
   soldierArea: {fileID: 1125363215898487863}
-  healingPanel: {fileID: 0}
+  healingPanel: {fileID: 3706507622765043609}
 --- !u!1 &7553935846120606805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,7 +1611,6 @@ RectTransform:
   - {fileID: 2511444977061864200}
   - {fileID: 1305046349469775587}
   - {fileID: 9174342920998193372}
-  - {fileID: 8655805885456438300}
   - {fileID: 1662209156924477276}
   m_Father: {fileID: 413571756144280268}
   m_RootOrder: 0
