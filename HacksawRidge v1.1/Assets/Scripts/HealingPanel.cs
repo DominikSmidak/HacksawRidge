@@ -43,38 +43,35 @@ public class HealingPanel : MonoBehaviour
 
     private void PopulateHealingSlots()
     {
-        Debug.Log($"Healing Slots Count at Start: {healingSlots?.Count}");
 
+        healingSlots[0].SetSlot("Morphium", morphiumSprite, 5);
+        healingSlots[1].SetSlot("Tourniquet", tourniquetSprite, 5);
+        healingSlots[2].SetSlot("ToiletPaper", toiletPaperSprite, 5);
+        healingSlots[3].SetSlot("SafetyPin", safetyPinSprite, 5);
+        healingSlots[4].SetSlot("Drugs", drugsSprite, 5);
         // Ensure there are enough slots assigned
         if (healingSlots == null || healingSlots.Count < 5)
         {
             Debug.LogError("Not enough slots assigned to the healing panel!");
             return;
         }
-
-        // Populate the slots with items and quantity of 5
-        healingSlots[0].SetSlot("Morphium", morphiumSprite, 5);
-        healingSlots[1].SetSlot("Tourniquet", tourniquetSprite, 5);
-        healingSlots[2].SetSlot("ToiletPaper", toiletPaperSprite, 5);
-        healingSlots[3].SetSlot("SafetyPin", safetyPinSprite, 5);
-        healingSlots[4].SetSlot("Drugs", drugsSprite, 5);
     }
 
     private void PopulateBottomLeftSlots()
     {
-        Debug.Log($"Bottom Left Slots Count at Start: {bottomLeftSlots?.Count}");
-
-        // Ensure there are enough slots assigned
-        if (bottomLeftSlots == null || bottomLeftSlots.Count < 3)
-        {
-            Debug.LogError("Not enough slots assigned to the bottom-left inventory!");
-            return;
-        }
 
         // Populate the slots with items
         bottomLeftSlots[0].SetSlot("Bandage", bandageSprite, 2);
         bottomLeftSlots[1].SetSlot("Pills", pillsSprite, 2);
         bottomLeftSlots[2].SetSlot("DogTag", dogTagSprite, 1);
+
+        // Ensure there are enough slots assigned
+        if (bottomLeftSlots == null || bottomLeftSlots.Count < 3)
+        {
+            return;
+        }
+
+ 
     }
 
     public void InitializeTreatment(string woundType, List<string> treatmentOrder)
@@ -119,23 +116,6 @@ public class HealingPanel : MonoBehaviour
             { "BrokenArm", brokenArmSprite },
             { "GunshotWound", gunshotWoundSprite }
         };
-        if (healingSlots == null || healingSlots.Count == 0)
-        {
-            Debug.LogError("Healing slots are not assigned or are empty!");
-        }
-        else
-        {
-            Debug.Log($"Healing Slots Initialized: {healingSlots.Count}");
-        }
-
-        if (bottomLeftSlots == null || bottomLeftSlots.Count == 0)
-        {
-            Debug.LogError("Bottom-left slots are not assigned or are empty!");
-        }
-        else
-        {
-            Debug.Log($"Bottom Left Slots Initialized: {bottomLeftSlots.Count}");
-        }
     }
 
     public void UpdatePanel(string woundType)

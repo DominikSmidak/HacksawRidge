@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1640143576423061404}
   - component: {fileID: 1640143576423061403}
   - component: {fileID: 1603645845834184958}
-  - component: {fileID: 2071778555781130868}
   - component: {fileID: 9056816995585003652}
+  - component: {fileID: 8333530592150121708}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -96,18 +96,6 @@ MonoBehaviour:
   itemIcon: {fileID: 1640143576644383213}
   quantityText: {fileID: 1640143577133066208}
   itemName: 
---- !u!114 &2071778555781130868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640143576423061401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91e743a5c08d7e648b60e247af56882c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!225 &9056816995585003652
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -120,6 +108,32 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!61 &8333530592150121708
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640143576423061401}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1640143576644383211
 GameObject:
   m_ObjectHideFlags: 0
