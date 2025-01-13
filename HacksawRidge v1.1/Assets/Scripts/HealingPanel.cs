@@ -43,6 +43,8 @@ public class HealingPanel : MonoBehaviour
 
     private void PopulateHealingSlots()
     {
+        Debug.Log($"Healing Slots Count at Start: {healingSlots?.Count}");
+
         // Ensure there are enough slots assigned
         if (healingSlots == null || healingSlots.Count < 5)
         {
@@ -60,6 +62,8 @@ public class HealingPanel : MonoBehaviour
 
     private void PopulateBottomLeftSlots()
     {
+        Debug.Log($"Bottom Left Slots Count at Start: {bottomLeftSlots?.Count}");
+
         // Ensure there are enough slots assigned
         if (bottomLeftSlots == null || bottomLeftSlots.Count < 3)
         {
@@ -115,6 +119,23 @@ public class HealingPanel : MonoBehaviour
             { "BrokenArm", brokenArmSprite },
             { "GunshotWound", gunshotWoundSprite }
         };
+        if (healingSlots == null || healingSlots.Count == 0)
+        {
+            Debug.LogError("Healing slots are not assigned or are empty!");
+        }
+        else
+        {
+            Debug.Log($"Healing Slots Initialized: {healingSlots.Count}");
+        }
+
+        if (bottomLeftSlots == null || bottomLeftSlots.Count == 0)
+        {
+            Debug.LogError("Bottom-left slots are not assigned or are empty!");
+        }
+        else
+        {
+            Debug.Log($"Bottom Left Slots Initialized: {bottomLeftSlots.Count}");
+        }
     }
 
     public void UpdatePanel(string woundType)

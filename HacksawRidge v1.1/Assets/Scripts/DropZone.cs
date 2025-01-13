@@ -9,11 +9,15 @@ public class DropZone : MonoBehaviour, IDropHandler
 
         if (draggableItem != null)
         {
+            Debug.Log($"Dropped item: {eventData.pointerDrag.name} into slot: {gameObject.name}");
+
             // Snap the dragged item to this slot
             draggableItem.transform.SetParent(transform);
             draggableItem.transform.position = transform.position;
-
-            Debug.Log($"Item dropped into slot: {gameObject.name}");
+        }
+        else
+        {
+            Debug.LogError("No draggable item detected on drop!");
         }
     }
 }

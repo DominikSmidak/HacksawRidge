@@ -11,6 +11,11 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+
+        if (canvasGroup == null)
+        {
+            Debug.LogError("CanvasGroup is missing! Please add a CanvasGroup component to this GameObject.");
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)

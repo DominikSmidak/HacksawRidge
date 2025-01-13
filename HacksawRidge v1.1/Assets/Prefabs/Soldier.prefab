@@ -2135,8 +2135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ac0d668be898d4ab44717a35cb4900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotIndex: 2
-  healingPanel: {fileID: 1168050005790067655}
 --- !u!224 &1005147985306718850 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1640143576423061402, guid: e834e205e9a223c4e9168cd2cfda907b, type: 3}
@@ -2265,8 +2263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ac0d668be898d4ab44717a35cb4900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotIndex: 1
-  healingPanel: {fileID: 1168050005790067655}
 --- !u!1001 &3827358783811722323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2845,8 +2841,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ac0d668be898d4ab44717a35cb4900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotIndex: 0
-  healingPanel: {fileID: 1168050005790067655}
 --- !u!224 &8443594877570776071 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1640143576423061402, guid: e834e205e9a223c4e9168cd2cfda907b, type: 3}

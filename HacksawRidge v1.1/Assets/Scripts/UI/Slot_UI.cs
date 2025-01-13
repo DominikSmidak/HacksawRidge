@@ -15,10 +15,12 @@ public class Slot_UI : MonoBehaviour
     {
         if (itemSprite != null)
         {
-            this.itemName = itemName; // Store item name
+            this.itemName = itemName;
             itemIcon.sprite = itemSprite;
-            itemIcon.color = new Color(1, 1, 1, 1); // Make icon visible
+            itemIcon.color = new Color(1, 1, 1, 1);
             quantityText.text = count.ToString();
+
+            Debug.Log($"Slot updated: {itemName} - Quantity: {count}");
         }
         else
         {
