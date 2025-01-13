@@ -16,6 +16,96 @@ public class HealingPanel : MonoBehaviour
     [SerializeField] private Sprite brokenArmSprite;
     [SerializeField] private Sprite gunshotWoundSprite;
 
+    // References to the slots in the top-left section of the UI
+    [SerializeField] private List<Slot_UI> healingSlots;
+
+    [SerializeField] private List<Slot_UI> bottomLeftSlots;
+
+    // Sprites for the items
+    [SerializeField] private Sprite morphiumSprite;
+    [SerializeField] private Sprite tourniquetSprite;
+    [SerializeField] private Sprite toiletPaperSprite;
+    [SerializeField] private Sprite safetyPinSprite;
+    [SerializeField] private Sprite drugsSprite;
+    [SerializeField] private Sprite bandageSprite;
+    [SerializeField] private Sprite pillsSprite;
+    [SerializeField] private Sprite dogTagSprite;
+
+    private List<string> currentTreatmentOrder; // Correct treatment order from the JSON
+
+    private int currentTreatmentIndex = 0; // Tracks the current step in the treatment sequence
+
+    private void Start()
+    {
+        PopulateHealingSlots();
+        PopulateBottomLeftSlots();
+    }
+
+    private void PopulateHealingSlots()
+    {
+        // Ensure there are enough slots assigned
+        if (healingSlots == null || healingSlots.Count < 5)
+        {
+            Debug.LogError("Not enough slots assigned to the healing panel!");
+            return;
+        }
+
+        // Populate the slots with items and quantity of 5
+        healingSlots[0].SetSlot("Morphium", morphiumSprite, 5);
+        healingSlots[1].SetSlot("Tourniquet", tourniquetSprite, 5);
+        healingSlots[2].SetSlot("ToiletPaper", toiletPaperSprite, 5);
+        healingSlots[3].SetSlot("SafetyPin", safetyPinSprite, 5);
+        healingSlots[4].SetSlot("Drugs", drugsSprite, 5);
+    }
+
+    private void PopulateBottomLeftSlots()
+    {
+        // Ensure there are enough slots assigned
+        if (bottomLeftSlots == null || bottomLeftSlots.Count < 3)
+        {
+            Debug.LogError("Not enough slots assigned to the bottom-left inventory!");
+            return;
+        }
+
+        // Populate the slots with items
+        bottomLeftSlots[0].SetSlot("Bandage", bandageSprite, 2);
+        bottomLeftSlots[1].SetSlot("Pills", pillsSprite, 2);
+        bottomLeftSlots[2].SetSlot("DogTag", dogTagSprite, 1);
+    }
+
+    public void InitializeTreatment(string woundType, List<string> treatmentOrder)
+    {
+        currentTreatmentOrder = treatmentOrder;
+        currentTreatmentIndex = 0;
+
+        Debug.Log($"Treatment for {woundType}: {string.Join(", ", treatmentOrder)}");
+    }
+
+    public void CheckTreatmentOrder(int slotIndex, GameObject draggedItem)
+    {
+        string draggedItemName = draggedItem.GetComponent<Slot_UI>().itemName;
+
+        if (currentTreatmentIndex < currentTreatmentOrder.Count)
+        {
+            string expectedItem = currentTreatmentOrder[currentTreatmentIndex];
+
+            if (draggedItemName == expectedItem)
+            {
+                Debug.Log($"Correct item: {draggedItemName} for step {currentTreatmentIndex + 1}");
+                currentTreatmentIndex++;
+
+                if (currentTreatmentIndex >= currentTreatmentOrder.Count)
+                {
+                    Debug.Log("All treatments applied successfully!");
+                }
+            }
+            else
+            {
+                Debug.LogError($"Wrong item: {draggedItemName}. Expected: {expectedItem}");
+            }
+        }
+    }
+
     private void Awake()
     {
         // Initialize the dictionary with wound types and corresponding sprites
