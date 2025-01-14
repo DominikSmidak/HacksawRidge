@@ -5775,6 +5775,7 @@ MonoBehaviour:
   pressE: {fileID: 119618339}
   healing: {fileID: 907246692}
   soldierArea: {fileID: 322629247}
+  healingPanel: {fileID: 0}
 --- !u!224 &417240002 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1640143576423061402, guid: e834e205e9a223c4e9168cd2cfda907b, type: 3}
@@ -70045,11 +70046,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 93015051411319324, guid: 378858e5862b5a8429ccb60a408e2370, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.62
+      value: 7.67
       objectReference: {fileID: 0}
     - target: {fileID: 93015051411319324, guid: 378858e5862b5a8429ccb60a408e2370, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.17
+      value: 3.19
       objectReference: {fileID: 0}
     - target: {fileID: 93015051411319324, guid: 378858e5862b5a8429ccb60a408e2370, type: 3}
       propertyPath: m_LocalPosition.z
