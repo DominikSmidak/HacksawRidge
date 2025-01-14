@@ -21,6 +21,15 @@ public class Soldier : MonoBehaviour
         if (soldierArea == null)
             Debug.LogError("SoldierArea script is missing as a child of Soldier prefab.");
     }
+    public string GetWoundType()
+    {
+        return woundType;
+    }
+
+    public Sprite GetSprite()
+    {
+        return spriteRenderer.sprite;
+    }
 
     public void Initialize(SoldierData data)
     {

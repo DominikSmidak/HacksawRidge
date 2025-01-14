@@ -10,6 +10,9 @@ public class SoldierInteraction : MonoBehaviour
     private PlayerMovement playerMovement;
     public SoldierArea soldierArea;
 
+    [SerializeField] private HealingPanel healingPanel;
+
+
     private bool isPlayerInRange = false;
 
     void Start()
@@ -57,6 +60,17 @@ public class SoldierInteraction : MonoBehaviour
     {
         healing.SetActive(true);
         playerMovement.enabled = false;
+
+        // Pass wound details to the healing panel
+        var soldierScript = GetComponentInParent<Soldier>();
+        if (soldierScript != null)
+        {
+            var healingPanelScript = healing.GetComponent<HealingPanel>();
+            if (healingPanelScript != null)
+            {
+                healingPanel.UpdatePanel(soldierScript.GetWoundType());
+            }
+        }
     }
 
     private void CloseHealing()
