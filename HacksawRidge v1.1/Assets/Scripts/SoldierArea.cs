@@ -34,7 +34,7 @@ public class SoldierArea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !hasTimerStarted && !isTaskCompleted)
+        if (collision.CompareTag("Player") || !hasTimerStarted && !isTaskCompleted)
         {
             timer.SetActive(true);
             barrier.SetActive(true);

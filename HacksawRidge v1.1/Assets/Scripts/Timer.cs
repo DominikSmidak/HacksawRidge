@@ -5,11 +5,11 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI timerText; // Can be assigned dynamically
-    [SerializeField] private float time;               // Default time
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private float time;
     private float remainingTime;
     private bool isCountingDown = false;
-    private float customTime = 0f;
+    //private float customTime = 0f;
 
     void Start()
     {

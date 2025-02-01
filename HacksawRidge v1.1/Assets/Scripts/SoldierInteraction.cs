@@ -56,13 +56,15 @@ public class SoldierInteraction : MonoBehaviour
     private void OpenHealing()
     {
         healing.SetActive(true);
+        pressE.SetActive(false);
         playerMovement.enabled = false;
     }
 
-    private void CloseHealing()
+    public void CloseHealing()
     {
         healing.SetActive(false);
         playerMovement.enabled = true;
+        pressE.SetActive(true);
 
         soldierArea.CompleteHealing(); // not gonna be here later
     }
