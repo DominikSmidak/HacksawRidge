@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         if(input.magnitude > 0.1f || input.magnitude < -0.1f)
         {
             moving = true;
+
         } else
         {
             moving = false;

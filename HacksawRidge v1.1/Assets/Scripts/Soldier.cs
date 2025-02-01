@@ -31,6 +31,16 @@ public class Soldier : MonoBehaviour
         return spriteRenderer.sprite;
     }
 
+    public List<string> GetTreatment()
+    {
+        return treatment;
+    }
+
+    public int GetCountOfSupplies()
+    {
+        return countOfSupplies;
+    }
+
     public void Initialize(SoldierData data)
     {
         soldierName = data.name;
